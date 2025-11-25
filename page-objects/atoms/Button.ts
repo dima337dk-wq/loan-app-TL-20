@@ -5,4 +5,8 @@ export default class Button extends BaseAtom {
     constructor(page: Page, container: Locator) {
         super(page, container);
     }
+
+    async scroll(): Promise<void> {
+        await this._container.scrollIntoViewIfNeeded()
+    }
 }

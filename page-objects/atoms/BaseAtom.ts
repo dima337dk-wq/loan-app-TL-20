@@ -13,6 +13,13 @@ export default class BaseAtom {
         await expect(this._container).toBeVisible({visible});
     }
 
+    async checkInViewport(visible: boolean): Promise<void> {
+        const check = visible
+            ? expect(this._container)
+            : expect(this._container).not;
+        await check.toBeInViewport();
+    }
+
     async checkEnabled(enabled = true): Promise<void> {
         await expect(this._container).toBeEnabled({enabled});
     }

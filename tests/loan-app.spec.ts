@@ -41,8 +41,7 @@ test.describe("Loan APP tests", async () => {
         await home.lastButton.scroll()
         await home.amountInput.checkInViewport(false)
         await home.lastButton.checkInViewport(true)
-        // await home.lastButton.click() // Android click doesn't work here
-        await home.amountInputScroll.scroll() // Scroll added because click doesn't work on Android
+        await home.lastButton.click(true)
         await home.amountInput.checkInViewport(true)
     });
 })
